@@ -1,0 +1,51 @@
+@keyframes growing {
+    0%,
+    100% {
+        transform: scale(0.9);
+    }
+    50% {
+        transform: scale(0.8);
+    }
+}
+
+.audioContextPopup {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+
+    &.visible {
+        display: block;
+
+        .audioContextPopup__Button {
+            opacity: 1;
+        }
+    }
+
+    &__Button {
+        width: 100%;
+        height: 100%;
+        display: block;
+        background: rgb(32 35 42);
+        transition: 0.3s all;
+        color: white;
+        border: 0;
+        font-family: inherit;
+        font-size: 3rem;
+        opacity: 0;
+        cursor: pointer;
+        animation: growing 2s infinite;
+        border: 4px dashed white;
+
+        &:hover {
+            background: rgb(24 26 31);
+            transition: 0.3s all;
+        }
+    }
+
+    &__Image {
+        width: 75px;
+        display: block;
+        margin: 0 auto 25px auto;
+    }
+}
